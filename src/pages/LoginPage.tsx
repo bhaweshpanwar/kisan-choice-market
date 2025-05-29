@@ -142,11 +142,11 @@ export default function LoginPage() {
             <p className='text-muted-foreground'>
               Sign in to your Kisan Choice account
             </p>
-            <div className='text-sm bg-blue-50 p-3 rounded-md text-blue-800 mt-3'>
+            {/* <div className='text-sm bg-blue-50 p-3 rounded-md text-blue-800 mt-3'>
               <p className='font-semibold'>Demo Accounts:</p>
               <p>Customer: john@gmail.com / John@123</p>
               <p>Farmer: ramesh@gmail.com / Ramesh@123</p>
-            </div>
+            </div> */}
           </div>
 
           <Form {...form}>
