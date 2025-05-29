@@ -43,9 +43,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [isLoading, setIsLoading] = useState(false); // Initially false, true during API calls
 
   const fetchCart = useCallback(async () => {
-    if (!isAuthenticated || user?.role !== 'consumer') {
-      setCart(null); // Clear cart if not authenticated or not a consumer
-      setIsLoading(false); // Ensure loading is false if we don't fetch
+    if (!isAuthenticated) {
       return;
     }
     setIsLoading(true);
