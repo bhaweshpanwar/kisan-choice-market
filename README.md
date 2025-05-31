@@ -1,73 +1,116 @@
-# Welcome to your Lovable project
 
-## Project info
+# Kisan Choice Frontend
 
-**URL**: https://lovable.dev/projects/a46ea5a1-14c3-4099-9f18-9f55bd3b0916
+This is the frontend for the Kisan Choice platform — a web application that empowers farmers by enabling direct-to-consumer transactions, negotiation-based pricing, and transparent e-commerce interactions.
 
-## How can I edit this code?
+Built with Vite, React, TypeScript, and Tailwind CSS, the frontend communicates with a secure Express/PostgreSQL backend hosted on AWS.
 
-There are several ways of editing your application.
+## Live Site
 
-**Use Lovable**
+https://heroic-dragon-0b1a27.netlify.app
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a46ea5a1-14c3-4099-9f18-9f55bd3b0916) and start prompting.
+## Backend API
 
-Changes made via Lovable will be committed automatically to this repo.
+https://apiaws.bhaweshpanwar.xyz
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
+## Tech Stack
 
 - Vite
+- React (with Hooks and functional components)
 - TypeScript
-- React
-- shadcn-ui
 - Tailwind CSS
+- shadcn/ui (for styled components)
+- Axios (for HTTP requests)
+- Zustand (state management)
+- Netlify (hosting)
+- GitHub Actions (CI/CD)
 
-## How can I deploy this project?
+## Features
 
-Simply open [Lovable](https://lovable.dev/projects/a46ea5a1-14c3-4099-9f18-9f55bd3b0916) and click on Share -> Publish.
+- User authentication (JWT + cookies)
+- Role-based dashboards (Farmer, Buyer)
+- Product browsing and filtering
+- Farmer product management
+- Buyer cart and order tracking
+- Offer & negotiation interface
+- OTP-based verification (via email)
+- Stripe payment integration
+- Persistent user sessions via cookies
+- Fully responsive design
 
-## Can I connect a custom domain to my Lovable project?
+## Project Structure
 
-Yes, you can!
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+src/
+├── assets/               # Static assets (images, logos)
+├── components/           # Shared React components
+├── context/              # Zustand stores
+├── hooks/                # Custom React hooks
+├── pages/                # Page-level components (routes)
+├── services/             # API clients (Axios, etc.)
+├── types/                # TypeScript type definitions
+├── utils/                # Reusable utilities
+├── App.tsx               # Root component
+└── main.tsx              # App bootstrap
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```
+
+## Environment Variables
+
+Create a `.env` file in the root directory with the following:
+
+```
+
+VITE\_API\_URL=[https://apiaws.bhaweshpanwar.xyz](https://apiaws.bhaweshpanwar.xyz)
+
+````
+
+> In development, you can use `http://localhost:3000` instead.
+
+## How to Run Locally
+
+```bash
+# Clone the repo
+git clone https://github.com/bhaweshpanwar/kisan-choice-market.git
+cd kisan-choice-market
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+````
+
+The app will be available at `http://localhost:5173` by default.
+
+## Deployment
+
+This project is deployed via [Netlify](https://netlify.com) with continuous deployment from the GitHub repository.
+
+To deploy:
+
+1. Push changes to `main` branch.
+2. Netlify will automatically rebuild and publish.
+3. Ensure the correct environment variables (`VITE_API_URL`) are set in Netlify dashboard.
+
+## Custom Domain
+
+The frontend is available at:
+
+[https://heroic-dragon-0b1a27.netlify.app](https://heroic-dragon-0b1a27.netlify.app)
+And optionally via:
+
+[https://kisanchoice.bhaweshpanwar.xyz](https://kisanchoice.bhaweshpanwar.xyz)
+
+Set up via Cloudflare and Netlify custom domain settings.
+
+## Author
+
+**Bhawesh Panwar**
+Bachelor of Computer Applications
+Devi Ahilya Vishwavidyalaya, Indore
+GitHub: [@bhaweshpanwar](https://github.com/bhaweshpanwar)
+
+```
+
