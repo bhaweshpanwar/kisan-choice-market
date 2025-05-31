@@ -110,7 +110,7 @@ export const blogPosts: BlogPost[] = [
       'A story of resilience and innovation in traditional farming methods during tough climate conditions.',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper enim vel sapien convallis, in efficitur est dictum. Donec sagittis magna sit amet libero cursus, at finibus purus tincidunt. Praesent volutpat risus vel nunc faucibus, vel commodo ipsum ultrices. Sed commodo consectetur magna, in vehicula justo varius in. Maecenas non ultrices risus. Integer sodales felis ac nulla pulvinar, in ultricies nulla tincidunt. Nulla facilisi. Nullam vel sagittis odio, a efficitur magna. Integer nec nulla vel enim fringilla tincidunt. Praesent vel est vitae magna lobortis elementum.',
-    image: '../../public/images/Blogs/5.png',
+    image: '../../images/Blogs/5.png',
     date: '2024-01-15',
     author: 'Manish Kumar',
   },
@@ -121,7 +121,7 @@ export const blogPosts: BlogPost[] = [
       'Breaking barriers and building sustainable farming practices that revitalized an entire community.',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper enim vel sapien convallis, in efficitur est dictum. Donec sagittis magna sit amet libero cursus, at finibus purus tincidunt. Praesent volutpat risus vel nunc faucibus, vel commodo ipsum ultrices. Sed commodo consectetur magna, in vehicula justo varius in. Maecenas non ultrices risus. Integer sodales felis ac nulla pulvinar, in ultricies nulla tincidunt. Nulla facilisi. Nullam vel sagittis odio, a efficitur magna. Integer nec nulla vel enim fringilla tincidunt. Praesent vel est vitae magna lobortis elementum.',
-    image: '../../public/images/Blogs/6.png',
+    image: '../../images/Blogs/6.png',
     date: '2024-02-10',
     author: 'Sunita Devi',
   },
@@ -132,7 +132,7 @@ export const blogPosts: BlogPost[] = [
       'The digital revolution is transforming how farmers connect with consumers and manage their operations.',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper enim vel sapien convallis, in efficitur est dictum. Donec sagittis magna sit amet libero cursus, at finibus purus tincidunt. Praesent volutpat risus vel nunc faucibus, vel commodo ipsum ultrices. Sed commodo consectetur magna, in vehicula justo varius in. Maecenas non ultrices risus. Integer sodales felis ac nulla pulvinar, in ultricies nulla tincidunt. Nulla facilisi. Nullam vel sagittis odio, a efficitur magna. Integer nec nulla vel enim fringilla tincidunt. Praesent vel est vitae magna lobortis elementum.',
-    image: '../../public/images/Blogs/7.png',
+    image: '../../images/Blogs/7.png',
     date: '2024-03-05',
     author: 'Raj Patel',
   },
@@ -143,7 +143,7 @@ export const blogPosts: BlogPost[] = [
       'Innovative approaches to sustainable farming that increase yield while protecting the environment.',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper enim vel sapien convallis, in efficitur est dictum. Donec sagittis magna sit amet libero cursus, at finibus purus tincidunt. Praesent volutpat risus vel nunc faucibus, vel commodo ipsum ultrices. Sed commodo consectetur magna, in vehicula justo varius in. Maecenas non ultrices risus. Integer sodales felis ac nulla pulvinar, in ultricies nulla tincidunt. Nulla facilisi. Nullam vel sagittis odio, a efficitur magna. Integer nec nulla vel enim fringilla tincidunt. Praesent vel est vitae magna lobortis elementum.',
-    image: '../../public/images/Blogs/8.png',
+    image: '../../images/Blogs/8.png',
     date: '2024-03-28',
     author: 'Anand Sharma',
   },

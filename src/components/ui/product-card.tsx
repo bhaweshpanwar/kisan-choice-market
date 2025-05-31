@@ -19,7 +19,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
   const farmerImage = product.seller_photo
     ? `${BASE_URL}${product.seller_photo}`
-    : `${BASE_URL}/public/img/default_profile_avatar.jpg`;
+    : `${BASE_URL}/img/default_profile_avatar.jpg`;
 
   const farmerName =
     product.farmer?.name || product.seller_name || 'KisanChoice Seller';

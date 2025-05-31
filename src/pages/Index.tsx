@@ -16,7 +16,7 @@ export default function Index() {
           <div className='grid grid-cols-1 md:grid-cols-2'>
             <div className='relative h-[50vh] md:h-[80vh]'>
               <img
-                src='../../public/images/hero.png'
+                src='../../images/hero.png'
                 alt='Farmers working in a field'
                 className='absolute inset-0 h-full w-full object-cover'
               />
@@ -108,7 +108,7 @@ export default function Index() {
             <div className='md:flex md:items-center md:space-x-10'>
               <div className='mb-8 md:mb-0 md:w-1/2'>
                 <img
-                  src='../../public/images/about-us.png'
+                  src='../../images/about-us.png'
                   alt='Farmers working in the field'
                   className=' object-cover'
                 />
