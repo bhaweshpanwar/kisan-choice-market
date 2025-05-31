@@ -53,7 +53,7 @@ export function Header() {
         {/* Logo */}
         <Link to='/' className='flex items-center'>
           <img
-            src='../../../public/images/kisan-choice-logo.png'
+            src='../../../images/kisan-choice-logo.png'
             alt='kisan choice'
             className='w-[238px] h-[138px] max-w-full object-contain'
           />
