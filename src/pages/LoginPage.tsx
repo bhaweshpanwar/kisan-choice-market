@@ -102,7 +102,7 @@ export default function LoginPage() {
     // Backend URL for Google OAuth initiation
     // This will redirect the user to Google, and Google will redirect back to your backend callback
     const googleLoginUrl = `${
-      process.env.REACT_APP_API_BASE_URL || 'http://localhost:3000'
+      process.env.REACT_APP_API_BASE_URL || 'https://apiaws.bhaweshpanwar.xyz'
     }/api/v1/auth/google`;
     window.location.href = googleLoginUrl; // Full page redirect
   };

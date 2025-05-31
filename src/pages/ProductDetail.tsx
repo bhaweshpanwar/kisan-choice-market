@@ -404,7 +404,7 @@ export default function ProductDetail() {
                   </h3>
                   <div className='flex items-center'>
                     <img
-                      src={`http://localhost:3000${product.seller_photo}`}
+                      src={`https://apiaws.bhaweshpanwar.xyz${product.seller_photo}`}
                       alt={product.seller_photo}
                       className='h-16 w-16 rounded-full border-2 border-white shadow-sm'
                     />
@@ -600,7 +600,7 @@ export default function ProductDetail() {
                             >
                               <div className='flex items-center mb-2'>
                                 <img
-                                  src={`http://localhost:3000${review.user_image}`}
+                                  src={`https://apiaws.bhaweshpanwar.xyz${review.user_image}`}
                                   alt={review.user_image}
                                   className='h-10 w-10 rounded-full'
                                 />
