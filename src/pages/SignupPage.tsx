@@ -53,13 +53,12 @@ export default function SignupPage() {
   async function onSubmit(values: SignupFormValues) {
     setIsSigningUp(true);
     try {
-      // Construct the payload object as expected by authService.signupUser
       const signupPayload = {
         name: values.name,
         email: values.email,
         mobile: values.mobile,
         password: values.password,
-        // confirmPassword is not usually sent to the backend, only used for frontend validation
+        confirmPassword: values.confirmPassword,
       };
       await contextSignup(signupPayload); // Pass the whole object
       // Toast success is handled in AuthContext, but you can add specific ones here if needed

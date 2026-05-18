@@ -35,6 +35,9 @@ import {
 } from 'lucide-react';
 import { PriceNegotiation } from '@/components/ui/price-negotiation';
 
+//import .env
+const API_BASE_URL = process.env.API_URL || 'http://localhost:3000'; 
+
 export default function ProductDetail() {
   const { productId } = useParams<{ productId: string }>();
   const [product, setProduct] = useState<Product | null>(null);
@@ -404,7 +407,7 @@ export default function ProductDetail() {
                   </h3>
                   <div className='flex items-center'>
                     <img
-                      src={`https://apiaws.bhaweshpanwar.xyz${product.seller_photo}`}
+                      src={`http://localhost:3000/${product.seller_photo}`}
                       alt={product.seller_photo}
                       className='h-16 w-16 rounded-full border-2 border-white shadow-sm'
                     />
@@ -600,7 +603,7 @@ export default function ProductDetail() {
                             >
                               <div className='flex items-center mb-2'>
                                 <img
-                                  src={`https://apiaws.bhaweshpanwar.xyz${review.user_image}`}
+                                  src={`${API_BASE_URL}${review.user_image}`}
                                   alt={review.user_image}
                                   className='h-10 w-10 rounded-full'
                                 />

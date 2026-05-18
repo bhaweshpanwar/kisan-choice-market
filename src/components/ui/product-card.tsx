@@ -14,7 +14,7 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   // const { addToCart } = useCart(); // Uncomment if you use it
-  const BASE_URL = 'https://apiaws.bhaweshpanwar.xyz';
+  const BASE_URL = process.env.API_URL || 'http://localhost:3000'; 
   // --- Data Mapping & Defaults ---
 
   const farmerImage = product.seller_photo

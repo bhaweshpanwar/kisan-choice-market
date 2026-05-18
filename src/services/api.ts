@@ -17,7 +17,7 @@ export interface ApiResponse<T = any> {
   // No token field here if it's not in the JSON response
 }
 
-const API_BASE_URL = 'https://apiaws.bhaweshpanwar.xyz';
+const API_BASE_URL = 'http://localhost:3000';
 
 const apiClient: AxiosInstance = axios.create({
   baseURL: API_BASE_URL,
