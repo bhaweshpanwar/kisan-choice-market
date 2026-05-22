@@ -36,7 +36,7 @@ import {
 import { PriceNegotiation } from '@/components/ui/price-negotiation';
 
 //import .env
-const API_BASE_URL = process.env.API_URL || 'http://localhost:3000'; 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'; 
 
 export default function ProductDetail() {
   const { productId } = useParams<{ productId: string }>();
@@ -47,6 +47,8 @@ export default function ProductDetail() {
   const { addItemToCart: contextAddToCart } = useCart();
   const [quantity, setQuantity] = useState<number>(1); // Initial quantity
   const [activeTab, setActiveTab] = useState<string>('details');
+
+  const BASE_URL = API_BASE_URL; // Add this to use in the return statement
 
   useEffect(() => {
     if (!productId) {
@@ -407,7 +409,7 @@ export default function ProductDetail() {
                   </h3>
                   <div className='flex items-center'>
                     <img
-                      src={`http://localhost:3000/${product.seller_photo}`}
+                      src={`${BASE_URL}/${product.seller_photo}`}
                       alt={product.seller_photo}
                       className='h-16 w-16 rounded-full border-2 border-white shadow-sm'
                     />
