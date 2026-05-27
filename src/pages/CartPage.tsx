@@ -39,7 +39,7 @@ import {
   InitiateCheckoutPayload,
   StripeSessionPayload,
   getCheckoutSession,
-} from '../../src/services/cartService'; // or your correct path
+} from '@/services/cartService';
 // const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY || ''); // For Stripe
 
 export default function CartPage() {

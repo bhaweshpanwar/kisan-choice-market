@@ -36,7 +36,7 @@ import {
 import { PriceNegotiation } from '@/components/ui/price-negotiation';
 
 //import .env
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'; 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://kisanapi.bhawesh.online'; 
 
 export default function ProductDetail() {
   const { productId } = useParams<{ productId: string }>();

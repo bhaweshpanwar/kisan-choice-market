@@ -38,7 +38,7 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   }
 
   // If the user has no role yet, redirect to role selection
-  if (user?.role === null) {
+  if (user?.role === null && location.pathname !== '/select-role') {
     return <Navigate to='/select-role' replace />;
   }
 

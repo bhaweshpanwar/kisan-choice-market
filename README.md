@@ -11,7 +11,7 @@ https://heroic-dragon-0b1a27.netlify.app
 
 ## Backend API
 
-https://apiaws.bhaweshpanwar.xyz
+https://kisanapi.bhawesh.online
 
 ## Tech Stack
 

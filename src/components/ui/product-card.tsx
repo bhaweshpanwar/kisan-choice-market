@@ -14,7 +14,7 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   // const { addToCart } = useCart(); // Uncomment if you use it
-  const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'; 
+  const BASE_URL = import.meta.env.VITE_API_URL || 'https://kisanapi.bhawesh.online'; 
   // --- Data Mapping & Defaults ---
 
   const farmerImage = product.seller_photo
