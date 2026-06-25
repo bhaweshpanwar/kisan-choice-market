@@ -27,7 +27,7 @@ const loginSchema = z.object({
 type LoginFormValues = z.infer<typeof loginSchema>;
 
 export default function LoginPage() {
-  const { login, user, isAuthenticated, isLoading: authIsLoading } = useAuth(); // Use authIsLoading
+  const { login, user, isAuthenticated } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const [isSubmitting, setIsSubmitting] = useState(false); // Renamed for clarity
@@ -35,19 +35,16 @@ export default function LoginPage() {
   const from = location.state?.from?.pathname || '/';
 
   useEffect(() => {
-    // Wait for initial auth check to complete
-    if (!authIsLoading && isAuthenticated) {
+    if (isAuthenticated) {
       console.log('LoginPage: Already authenticated, redirecting...', user);
       let redirectTo = from;
       if (user?.role === 'farmer') {
         redirectTo = '/dashboard/farmer';
       } else if (user?.role === 'consumer') {
-        redirectTo = '/'; // Or consumer dashboard
+        redirectTo = '/';
       } else if (!user?.role) {
-        // After signup, role might be pending selection
         redirectTo = '/select-role';
       }
-      // Only navigate if we are currently on an auth page and not already at the target
       if (
         (location.pathname === '/login' || location.pathname === '/signup') &&
         location.pathname !== redirectTo
@@ -55,7 +52,7 @@ export default function LoginPage() {
         navigate(redirectTo, { replace: true });
       }
     }
-  }, [authIsLoading, isAuthenticated, user, navigate, from, location.pathname]);
+  }, [isAuthenticated, user, navigate, from, location.pathname]);
 
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema),
@@ -107,19 +104,6 @@ export default function LoginPage() {
     window.location.href = googleLoginUrl; // Full page redirect
   };
 
-  if (authIsLoading) {
-    return (
-      <>
-        <Header />
-        <div className='container mx-auto flex items-center justify-center py-12'>
-          Authenticating...
-        </div>
-      </>
-    );
-  }
-
-  // If authenticated after loading, the useEffect should handle redirection.
-  // This is a fallback or can show a brief "Redirecting..." message.
   if (isAuthenticated) {
     return (
       <>

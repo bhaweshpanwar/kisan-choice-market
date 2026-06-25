@@ -48,22 +48,20 @@ export default function FarmerDetailsFormPage() {
     user,
     isAuthenticated,
     updateUserRoleAndDetails,
-    isLoading: authLoading,
   } = useAuth();
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-    if (!authLoading && !isAuthenticated) {
+    if (!isAuthenticated) {
       toast.info('Please login to continue.');
       navigate('/login');
     }
-    // If user is already a farmer, redirect them away
     if (user?.role === 'farmer') {
       toast.info("You're already registered as a farmer!");
-      navigate('/dashboard/farmer'); // Or appropriate farmer dashboard
+      navigate('/dashboard/farmer');
     }
-  }, [isAuthenticated, authLoading, user, navigate]);
+  }, [isAuthenticated, user, navigate]);
 
   const form = useForm<FarmerDetailsFormValues>({
     resolver: zodResolver(farmerDetailsSchema),
@@ -101,8 +99,7 @@ export default function FarmerDetailsFormPage() {
     }
   }
 
-  if (authLoading) return <div>Loading...</div>;
-  if (!isAuthenticated) return null; // Should be redirected by useEffect
+  if (!isAuthenticated) return null;
 
   return (
     <>
@@ -207,9 +204,7 @@ export default function FarmerDetailsFormPage() {
               <Button
                 type='submit'
                 className='w-full mt-2 bg-kisan-primary text-white hover:bg-kisan-primary/90'
-                disabled={
-                  isSubmitting || !form.formState.isValid || authLoading
-                }
+                disabled={isSubmitting || !form.formState.isValid}
               >
                 {isSubmitting
                   ? 'Submitting...'

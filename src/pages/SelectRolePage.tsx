@@ -22,7 +22,6 @@ export default function SelectRolePage() {
 
   // Redirect if not authenticated
   useEffect(() => {
-    // Allow loading to finish before checking isAuthenticated
     if (!isLoading && !isAuthenticated) {
       toast.error('Please log in to select a role.');
       navigate('/login');
@@ -50,20 +49,7 @@ export default function SelectRolePage() {
     }
   };
 
-  if (isLoading) {
-    return (
-      <>
-        <Header />
-        <div className='container mx-auto flex flex-col items-center justify-center py-16 px-4 md:px-6'>
-          Loading user information...
-        </div>
-      </>
-    );
-  }
-
   if (!user) {
-    // This case should ideally be handled by the useEffect redirecting to /login
-    // but as a fallback:
     return (
       <>
         <Header />

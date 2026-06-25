@@ -13,35 +13,24 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   const { isAuthenticated, isLoading, user } = useAuth();
   const location = useLocation();
 
-  // If we're still checking the user's authentication status, show loading
-  if (isLoading) {
-    return (
-      <div className='flex h-screen items-center justify-center'>
-        Loading...
-      </div>
-    );
-  }
-
-  // If the user is not authenticated, redirect to the login page
-  if (!isAuthenticated) {
+  if (!isLoading && !isAuthenticated) {
     return <Navigate to='/login' state={{ from: location }} replace />;
   }
 
-  // If there's a role requirement and the user doesn't have that role
-  if (requiredRole && user?.role !== requiredRole) {
-    // Redirect farmers to their dashboard
+  if (!isLoading && requiredRole && user?.role !== requiredRole) {
     if (user?.role === 'farmer') {
       return <Navigate to='/dashboard/farmer' replace />;
     }
-    // Redirect regular users to the main page
     return <Navigate to='/' replace />;
   }
 
-  // If the user has no role yet, redirect to role selection
-  if (user?.role === null && location.pathname !== '/select-role') {
+  if (
+    !isLoading &&
+    user?.role === null &&
+    location.pathname !== '/select-role'
+  ) {
     return <Navigate to='/select-role' replace />;
   }
 
-  // If the user is authenticated with the correct role, render the children
   return <>{children}</>;
 };

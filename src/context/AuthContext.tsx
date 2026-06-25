@@ -51,8 +51,8 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
-  const [isAuthenticated, setIsAuthenticated] = useState(false); // Key state
-  const [isLoading, setIsLoading] = useState(true); // For initial auth check
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLoginOrSignupSuccess = (responseData: AuthResponse): User => {
     const backendUser = responseData.data.user;
