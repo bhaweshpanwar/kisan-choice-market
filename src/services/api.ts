@@ -17,7 +17,7 @@ export interface ApiResponse<T = any> {
   // No token field here if it's not in the JSON response
 }
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://kisanapi.bhawesh.online';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://kisan-choice.onrender.com';
 
 const apiClient: AxiosInstance = axios.create({
   baseURL: API_BASE_URL,
@@ -40,7 +40,13 @@ apiClient.interceptors.response.use(
       console.error('API Error Status:', error.response.status);
       return Promise.reject(error.response.data);
     } else if (error.request) {
-      console.error('Network Error:', error.request);
+      console.error('Network Error - No response received.');
+      console.error('Request Details:', {
+        url: error.config?.url,
+        method: error.config?.method,
+        baseURL: error.config?.baseURL,
+        headers: error.config?.headers
+      });
       return Promise.reject({
         status: 'error',
         message: 'Network error, please check your connection.',

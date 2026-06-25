@@ -102,7 +102,7 @@ export default function LoginPage() {
     // Backend URL for Google OAuth initiation
     // This will redirect the user to Google, and Google will redirect back to your backend callback
     const googleLoginUrl = `${
-      import.meta.env.VITE_API_URL || 'https://kisanapi.bhawesh.online'
+      import.meta.env.VITE_API_URL || 'https://kisan-choice.onrender.com'
     }/api/v1/auth/google`;
     window.location.href = googleLoginUrl; // Full page redirect
   };
